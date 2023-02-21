@@ -6,7 +6,7 @@
 #eval `keychain --timeout 999999999999 --quiet --eval --nogui $HOME/.ssh/id_ed25519 --dir "$XDG_RUNTIME_DIR/keychain"`
 #eval `ssh-agent -s`
 
-eval `keychain --agents gpg,ssh --dir "~/.config/keychain" --timeout 432000 --quiet --eval --nogui ~/.ssh/id_ed25519 5E2BC183638774D3`
+#eval `keychain --agents gpg,ssh --dir $HOME/.config/keychain --timeout 432000 --quiet --eval --nogui $HOME/.ssh/id_ed25519 5E2BC183638774D3`
 
-export HISTFILE="$XDG_CONFIG_HOME/bash/history"
+export HISTFILE="$HOME/.config/bash/history"
 export PATH="./node_modules/.bin:$HOME/.local/bin:$PATH"

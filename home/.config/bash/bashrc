@@ -54,7 +54,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 # libice / iceauthority
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
-export XAUTHORITY="$XDG_CONFIG_HOME/X11/xauthority"
+#export XAUTHORITY="$XDG_CONFIG_HOME/X11/xauthority"
 
 # libx11
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
@@ -129,3 +129,4 @@ export SPACESHIP_EXIT_CODE_SHOW=true
 
 source "$XDG_CONFIG_HOME/bash/aliases"
 
+eval `keychain --agents gpg,ssh --dir $HOME/.config/keychain --timeout 432000 --quiet --eval --nogui $HOME/.ssh/id_ed25519 5E2BC183638774D3`

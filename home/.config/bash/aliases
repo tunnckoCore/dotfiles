@@ -1,0 +1,66 @@
+alias sudo="doas"
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias xrdbload="xrdb -load ~/.config/X11/xresources"
+alias ls="ls --color --group-directories-first -F"
+alias ll="ls -1a"
+alias lsal="ls -al"
+
+alias mkdir="mkdir -pv"
+alias cl="clear"
+
+alias gcm="git commit -s -S -m "$1""
+alias gall="git add --all"
+alias gp="git push"
+
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
+
+alias grep="grep --color=tty -d skip"
+alias opn="exo-open"
+alias sk="screenkey"
+
+alias ..="cd .."
+
+alias zshc="nano ~/.zshrc"
+alias ali="nano ~/.aliases"
+alias sli="source ~/.aliases"
+
+# alias gpull="git pull origin $(git_current_branch)"
+# alias gpush="git push origin $(git_current_branch)"
+
+# confirmation #
+alias mv="mv -i"
+alias cp="cp -i"
+alias ln="ln -i"
+
+alias free='free -m' # show sizes in MB
+alias more=less
+
+# Parenting changing perms on / #
+alias chown="chown --preserve-root"
+alias chmod="chmod --preserve-root"
+alias chgrp="chgrp --preserve-root"
+
+gfix () {
+  git commit -s -S -m "fix: $1"
+}
+
+gfeat () {
+  git commit -s -S -m "feat: $1"
+}
+
+repo() {
+  mkdir $1
+  cd $1
+  touch .gitkeep
+  git init
+  gall
+  gcm 'chore: initial commit'
+  hub create -d $2
+  gp -u origin master
+  echo "Excellent! Now run your generator to scaffold package files."
+  hub browse "tunnckocore/$1"
+  echo "Deleting '.gitkeep' file..."
+  rm -rf .gitkeep
+}

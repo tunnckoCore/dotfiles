@@ -1,0 +1,131 @@
+#source "$HOME/.config/env_vars"
+
+# Follows XDG Base Dir Spec: https://wiki.archlinux.org/index.php/XDG_Base_Directory 
+
+export DISPLAY=":0"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# list of dirs separated by ":" (defaults)
+export XDG_CONFIG_DIRS="/etc/xdg:$XDG_CONFIG_HOME"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$XDG_DATA_HOME/flatpak/exports/share:$XDG_DATA_HOME"
+
+#####################
+## Partial support ##
+#####################
+
+# Bash Completions
+#export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash-completion/bash_completion"
+
+# for `conky` use
+# conky --config="$XDG_CONFIG_HOME"/conky/conkyrc
+
+# for `dircolors` use (coreutils)
+#eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
+
+# for `irssi` use
+# irssi --config="$XDG_CONFIG_HOME/irssi/config" --home="$XDG_DATA_HOME/irssi"
+
+# for `keychain` use
+#keychain --absolute --dir "$XDG_RUNTIME_DIR/keychain"
+
+# for `netbeans` use
+# netbeans --userdir "${XDG_CONFIG_HOME}/netbeans"
+
+# for `nvidia-settings` use
+# nvidia-settings --config="$XDG_CONFIG_HOME/nvidia/settings"
+
+# for `xbindkeys` use
+#xbindkeys -f "$XDG_CONFIG_HOME/xbindkeys/config"
+
+# kde
+export KDEHOME="$XDG_CONFIG_HOME/kde"
+
+# CUDA
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+
+# gnupg
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
+# gtk1 & gtk2
+export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+
+# libice / iceauthority
+export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
+#export XAUTHORITY="$XDG_CONFIG_HOME/X11/xauthority"
+
+# libx11
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
+export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
+
+# mplayer
+export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
+
+# ncurses
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+
+# nodejs repl
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+
+# notmuch (email)
+export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/notmuchrc"
+export NMBGIT="$XDG_DATA_HOME/notmuch/nmbug"
+
+# npm
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
+# nvm (nodejs manager)
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+
+# pass (passwordstore.org)
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
+# readline
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+
+# redis
+export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
+export REDISCLI_RCFILE="$XDG_CONFIG_HOME/redis/redisclirc"
+
+# rust rustup
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+
+# wakatime
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+
+# wget
+# and use (alias): wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+# or single time: echo hsts-file \= "$XDG_CACHE_HOME"/wget-hsts >> "$XDG_CONFIG_HOME/wgetrc"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+
+# wine
+# mkdir -p "$XDG_DATA_HOME/wineprefixes"
+#WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+
+# xinit
+# not respected by startx, so use: 
+# startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" <program>
+#export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+#export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
+
+# for `xorg-xrdb`
+# use alias: xrdb -load ~/.config/X11/xresources
+
+# for `yarn`
+# use alias: alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+
+
+export $(dbus-launch)
+export HISTFILE="$XDG_CONFIG_HOME/bash/history"
+export PROMPT_COMMAND="history -a"
+export XCURSOR_PATH="${XCURSOR_PATH}:~/.local/share/icons"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+export LANG="en_US.UTF-8"
+export EDITOR="nano"
+export SPACESHIP_EXIT_CODE_SHOW=true
+
+source "$XDG_CONFIG_HOME/bash/aliases"
+

@@ -1,0 +1,312 @@
+# i3 v4, Alpine Linux, February 2023
+# ~/.config/i3/config
+
+
+######
+## CONSTANTS
+######
+
+set $alt      Mod1
+set $mod      Mod4
+set $win      Mod4
+set $super    Mod4
+set $shift    Shift
+set $ctrl     Control
+set $esc      Escape
+set $del      Delete
+set $ret      Return
+set $return   Return
+set $enter    Return
+set $tab      Tab
+set $prnt     Print
+set $exec     exec --no-startup-id
+set $HOME     /home/charlike
+set $cfg      $HOME/.config/i3/config
+set $cfg_blk  $HOME/.config/i3/blocks/config
+set $geditor  mousepad
+
+# Theme colors
+set $base00 "#101218"
+set $base01 "#1f222d"
+# atom material: set $base01 "#222D32"
+set $base02 "#252936"
+set $base03 "#7780a1"
+set $base04 "#D5D5D5"
+set $base05 "#d1d4e0"
+set $base06 "#C9CCDB"
+set $base07 "#ffffff"
+set $base08 "#ee829f"
+set $base09 "#f99170"
+set $base10 "#ffefcc"
+set $base11 "#a5ffe1"
+set $base12 "#97e0ff"
+set $base13 "#97bbf7"
+set $base14 "#c0b7f9"
+set $base15 "#fcc09e"
+
+
+######
+## WORKSPACES
+######
+
+# Workspaces (there is spaces between the icons and the name)
+set $ws1    "1:  web"
+set $ws2    "2:  term"
+set $ws3    "3:  dev"
+set $ws4    "4:  chat"
+set $ws5    "5:  htop"
+set $ws6    "6:  home"
+set $ws7    "7:  mail"
+set $ws8    "8: "
+set $ws9    "9: "
+set $ws10   "10:  desk"
+
+# Workspace-Related Bindings
+bindsym $super+1 workspace 		$ws1
+bindsym $super+2 workspace 		$ws2
+bindsym $super+3 workspace 		$ws3
+bindsym $super+4 workspace 		$ws4
+bindsym $super+5 workspace 		$ws5
+bindsym $super+6 workspace 		$ws6
+bindsym $super+7 workspace 		$ws7
+bindsym $super+8 workspace 		$ws8
+bindsym $super+9 workspace 		$ws9
+bindsym $super+0 workspace 		$ws10
+
+bindsym $super+$shift+1 move container to workspace 	$ws1
+bindsym $super+$shift+2 move container to workspace 	$ws2
+bindsym $super+$shift+3 move container to workspace 	$ws3
+bindsym $super+$shift+4 move container to workspace 	$ws4
+bindsym $super+$shift+5 move container to workspace 	$ws5
+bindsym $super+$shift+6 move container to workspace 	$ws6
+bindsym $super+$shift+7 move container to workspace 	$ws7
+bindsym $super+$shift+8 move container to workspace 	$ws8
+bindsym $super+$shift+9 move container to workspace 	$ws9
+bindsym $super+$shift+0 move container to workspace 	$ws10
+
+
+######
+## SETTINGS
+######
+
+font pango:			"Fira Code 13"
+floating_modifier		Mod4
+focus_follows_mouse		no
+hide_edge_borders		both
+popup_during_fullscreen		smart
+new_window			none
+
+# workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+
+for_window [urgent=latest] focus
+
+
+# Default workspaces
+assign [class="(Navigator|firefox)"] $ws1
+assign [class="(Navigator|librewolf)"] $ws1
+assign [class="Xfce4-terminal" instance="xfce4-terminal" title="^Terminal 1"] $ws2
+assign [class="Code"] $ws3
+assign [class="Pcmanfm" title="charlike"] $ws6
+assign [class="Xfce4-terminal" title="htop"] $ws7
+
+# Open specific applications in floating mode
+# hint: use `xprop` and search for `WM_CLASS`
+for_window [class="^.*"] border pixel 1
+for_window [class="[.]*"] floating enable
+for_window [class="Xfce4-terminal" instance="xfce4-terminal" title="^Terminal 1"] floating disable
+for_window [class="URxvt"] floating disable
+for_window [title="alsamixer"] floating enable border pixel 1
+#for_window [class="calamares"] floating enable border normal
+for_window [class="(Navigator|firefox)"] floating disable
+for_window [class="(Navigator|librewolf)"] floating disable
+for_window [class="Firefox"] floating enable
+for_window [class="(Pcmanfm|pcmanfm)" title="charlike"] floating disable
+for_window [title="File Transfer*"] floating enable
+for_window [title="^sysinxi-*"] floating enable
+
+# force floating dialogs and popup windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+######
+## APPS
+######
+
+
+# Flatpaks - LibreWolf & VSCode
+bindsym $super+w $exec flatpak run io.gitlab.librewolf-community
+bindsym $super+b $exec flatpak run io.gitlab.librewolf-community
+
+# for some frickin reason it doesn't launch, but thru terminal it does...
+#bindsym $super+r exec flatpak run com.visualstudio.code
+
+# Programs
+bindsym $super+h        exec pcmanfm $HOME
+#bindsym $super+d 	exec rofi -show run
+bindsym $super+d	exec dmenu_run -b -nb "#1f222d" -sb "#D5D5D5" -sf "#1f222d" -fn "Noto Sans-12" -h 30 -x 170 -y 1 -w 600
+#bindsym $super+f  	exec cd_with_fzf
+
+######
+## MAPPINGS
+######
+
+# Config stuff
+bindsym $super+$shift+c reload
+bindsym $super+$shift+e $exec mousepad $cfg
+
+# restart i3 inplace (preserves your layout/session)
+bindsym $super+$shift+r restart
+
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+bindsym F11			fullscreen toggle
+bindsym $super+$shift+a		fullscreen toggle
+
+# toggle fullscreen mode for the focused container
+bindsym $super+$shift+f 	floating toggle
+bindsym $alt+$shift+f 		floating toggle
+
+bindsym $super+Tab 		workspace back_and_forth
+bindsym $alt+Tab 		workspace back_and_forth
+
+# Terminals for left and right hand
+bindsym $super+t 		exec xfce4-terminal --title="Terminal X"
+bindsym $super+$enter 		exec xfce4-terminal --title="Terminal Y"
+bindsym $super+$shift+$enter 	exec i3-sensible-terminal
+
+# System bindings
+bindsym $super+$shift+l		$exec $HOME/.local/bin/blurlock
+bindsym $super+$shift+s		$exec $HOME/.local/bin/i3exit suspend
+bindsym $super+$shift+h		$exec $HOME/.local/bin/i3exit hibernate
+bindsym $super+$shift+t		$exec $HOME/.local/bin/i3-toggle-touchpad
+
+# Easy quitting/killing/logout
+bindsym $ctrl+$alt+$del		exit
+bindsym $super+$shift+$del	exec pkill X
+
+bindsym $ctrl+q			--release $exec xkill
+bindsym $ctrl+$shift+q		--release $exec xkill
+
+bindsym $super+q		kill
+bindsym $super+$shift+q		kill
+
+# Check with: speaker-test -c2)
+bindsym $super+z exec amixer -q set Master 5%+ unmute
+bindsym $super+x exec amixer -q set Master toggle
+bindsym $super+c exec amixer -q set Master 5%- unmute
+
+# Screenshoting
+set $scrt scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/'
+
+bindsym --release $prnt 	$exec $scrt     # fullscreen
+bindsym --release $super+$prnt 	$exec $scrt -u  # current window
+bindsym --release $super+p 	$exec $scrt -s  # select area
+
+# i3blocks: keyindicator for CapsLock and NumLock
+bindsym --release Caps_Lock    exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock     exec pkill -SIGRTMIN+11 i3blocks
+
+# System Mode bindings
+set $sysinfo "  Info: [s]ensors  [g]raphics  [a]udio  [n]etwork [p]artitions cp[u] [i]nfo [f]ull"
+bindsym $super+i     mode $sysinfo
+mode $sysinfo {
+	bindsym s exec alacritty --hold --title 'sysinxi-sensors' 	-e inxi -Ss
+	bindsym g exec alacritty --hold --title 'sysinxi-graphics' 	-e inxi -SG
+	bindsym a exec alacritty --hold --title 'sysinxi-audio' 	-e inxi -SA
+	bindsym n exec alacritty --hold --title 'sysinxi-network' 	-e inxi -SN
+	bindsym p exec alacritty --hold --title 'sysinxi-partnswap 	-e inxi -SP --swap
+	bindsym u exec alacritty --hold --title 'sysinxi-cpu'		-e inxi -SC
+	bindsym i exec alacritty --hold --title 'sysinxi-info'		-e inxi -SI
+	bindsym f exec alacritty --hold --title 'sysinxi-full'		-e ~/.local/bin/sysinxi-full
+
+	# exit system mode
+	bindsym $super+i mode "default"
+	bindsym $super+q mode "default"
+	bindsym $esc mode "default"
+	bindsym q mode "default"
+}
+
+bindsym $super+$shift+i exec alacritty --hold --title 'sysinxi-full' -e ~/.local/bin/sysinxi-full
+
+# TODO CACHE WEATHER on disk (for 3 hours?)
+bindsym $super+$shift+w exec alacritty --hold --title 'sysinxi-weather' -e ~/.local/bin/sysinxi-weather
+
+######
+## i3 PANEL
+######
+
+# hide/unhide i3status bar
+bindsym $super+m bar mode toggle
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+	position bottom
+	tray_padding 5
+	font pango: Fira Code 12
+	i3bar_command i3bar
+	#status_command i3status
+	status_command i3blocks -c ~/.config/i3/blocks/config
+	colors {
+		separator   $base03
+		background  $base01
+		statusline  $base05
+		#                       border  	background 	text
+		# focused_workspace     $base01 	$base01    	$base07
+		focused_workspace     	$base04 	$base04 	$base01
+		active_workspace      	$base01 	$base02 	$base04
+		inactive_workspace    	$base01 	$base01		$base04
+		#urgent_workspace      	$base01		$base01		$base08
+		urgent_workspace 	#FF3D00 	#FF3D00 	$base01
+	}
+}
+
+
+# Widow Colors
+#                          border  	background 	text    	indicator
+client.focused             $base01 	$base01 	$base07 	$base15
+client.focused_inactive    $base02 	$base02 	$base04 	$base15
+client.unfocused           $base02 	$base02 	$base04 	$base15
+client.urgent              $base02 	$base08 	$base00 	$base15
+
+
+######
+## AUTOSTARTS
+######
+
+# $exec xautolock -time 140 -locker i3lock
+exec_always xautolock -time 140 -locker blurlock --nofork
+
+#$exec xss-lock --transfer-sleep-lock -- blurlock --nofork
+exec_always picom -f -D 5
+
+# Night Mode (aur: redshift-minimal, optional config at ~/.config/redshift/redshift.conf)
+# see https://github.com/jonls/redshift
+# 'nightmode' is at ~/.local/bin/nightmode
+# and is a function: redshift -l "42.6977:23.3218" -t "7000:${1:-4000}" -b "1:0.6" > /dev/null 2>&1 &
+#
+# default follows the day/night
+# (only once, on startx)
+
+# exec redshift -l "42.6977:23.3218" -t "8000:7000" -b "1:0.7"
+
+bindsym $super+$shift+m pkill redshift
+
+# Layouts [us,bg,bg], toggle it with alt+shift
+exec_always --no-startup-id setxkbmap -layout "us,bg(phonetic)" -option "grp:alt_shift_toggle"
+
+# Remap Esc to CapsLock (esc key still works)
+exec_always --no-startup-id setxkbmap -layout "us,bg(phonetic)" -option caps:escape
+
+$exec xfce4-terminal --title="Terminal 1"
+$exec flatpak run io.gitlab.librewolf-community
+
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/Downloads/dracula-base.png
+exec_always --no-startup-id udiskie -a -2 -N -s

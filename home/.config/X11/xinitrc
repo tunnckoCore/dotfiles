@@ -1,0 +1,51 @@
+#!/bin/sh
+# $Xorg: xinitrc.cpp,v 1.3 2000/08/17 19:54:30 cpqbld Exp $
+
+userresources=$HOME/.config/X11/xresources
+usermodmap=$HOME/.config/X11/xmodmap
+xinitdir=/etc/X11
+sysresources=$xinitdir/Xresources
+sysmodmap=$xinitdir/Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f $userresources ]; then
+    xrdb -merge $userresources
+fi
+
+if [ -f $usermodmap ]; then
+    xmodmap $usermodmap
+fi
+
+# First try ~/.xinitrc
+if [ -f "$HOME/.config/X11/xinitrc" ]; then
+	XINITRC="$HOME/.config/X11/xinitrc"
+	if [ -x $XINITRC ]; then
+		# if the x bit is set on .xinitrc
+		# it means the xinitrc is not a
+		# shell script but something else
+		exec $XINITRC "$@"
+	else
+		exec /bin/sh "$HOME/.config/X11/xinitrc" "$@"
+	fi
+fi
+
+if [ -d "$HOME/.config"/X11/xinitrc.d ] ; then
+	for f in "$HOME/.config"/X11/xinitrc.d/?* ; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
+fi
+
+for p in i3 startxfce4 startfluxbox xfce4-terminal \
+		mrxvt urxvt st xterm; do
+	command -v "$p" >/dev/null && exec "$p"
+done

@@ -1,0 +1,540 @@
+nano ~/.config/bash/profile 
+nano ~/.config/bash/bashrc 
+nano ~/.config/bash/profile 
+nano ~/.config/bash/bashrc 
+cat ~/.config/bash/bashrc >> .config/bash/profile 
+nano .config/bash/profile 
+nano .config/env_vars 
+flatpak run com.visualstudio.code ~/.config
+nano ~/.config/bash/bashrc 
+export $(dbus-launch)
+flatpak run com.visualstudio.code ~/.config
+flatpak run com.visualstudio.code
+dbus-launch 
+doas rm -rf /tmp/*
+doas dbus-launch
+doas apk add dbus-x11 
+dbus-uuidgen > /var/lib/dbus/machine-id
+doas dbus-uuidgen > /var/lib/dbus/machine-id
+dbus-uuidgen
+dbus-uuidgen
+doas nano /var/lib/dbus/machine-id
+doas nano /var/lib/dbus/machine-id
+doas rc-update add dbus
+nano .config/bash/bashrc 
+nano .config/bash/profile 
+dias reboot
+doas reboot
+nano ~/.config/env_vars 
+nano ~/.config/bash/bashrc 
+nano ~/.config/bash/profile 
+nano .config/env_vars 
+nano ~/.config/bash/profile 
+nano ~/.config/bash/bashrc 
+doas pkill X
+doas 
+exit
+nano ~/.config/bash/profile 
+doas pkill X
+doas pkill X
+doas pkill X
+nano .config/bash/profile 
+doas pkill X
+doas pkill X
+nano ~/.config/bash/profile 
+doas pkill X
+nano ~/.config/bash/profile 
+doas pkill X
+nano ~/.config/bash/profile 
+doas pkill X
+doas pkill X
+doas reboot
+lsal
+rm .bash_history .ash_history .Xauthority .ICEauthority .xsession-errors*
+nano .dmrc 
+lsal
+printenv 
+lsal
+lxappearance 
+doas reboot
+lxappearance 
+printenv 
+printenv | grep XDG
+flatpak run com.visualstudio.code
+nano ~/.config/bash/bashrc 
+flatpak run com.visualstudio.code
+xrdb -load ~/.config/X11/xresources 
+nano /etc/hostname 
+doas nano /etc/hostname 
+doas nano /etc/X11/xinit/xinitrc
+doas cp /etc/X11/xinit/xinitrc ~/.config/X11/
+doas cp -R /etc/X11/xinit/xinitrc.d/ ~/.config/X11/
+doas cp /etc/X11/xinit/xserverrc ~/.config/X11/
+mousepad ~/.config/X11/xinitrc
+export DISPLAY="0.0"
+mousepad ~/.config/X11/xinitrc
+doas cp -f /etc/X11/xinit/xinitrc ~/.config/X11/
+rm .config/X11/xinitrc
+doas rm .config/X11/xinitrc
+nano .config/X11/xinitrc
+nano .config/X11/xinitrc
+ls .config/X11/
+lsal .config/X11/
+chown -R charlike:charlike ~/.config/X11/
+doas chown -R charlike:charlike ~/.config/X11/
+lsal .config/X11/
+nano .config/X11/xinitrc
+cat /etc/resolv.conf 
+nano .config/bash/profile 
+doas nano /etc/hosts
+nano .config/bash/profile 
+cat .config/bash/profile 
+export DISPLAY="arckalp.local:0.0"
+mousepad ~/.config/X11/xinitrc
+nano ~/.config/bash/profile 
+nano ~/.config/bash/bashrc 
+doas reboot
+source .bashrc 
+dircolors --help
+dircolors -p
+nano .config/bash/bashrc 
+dircolors -h
+dircolors --help
+dircolors --print-database
+dircolors --help
+dircolors --print-ls-colors
+dircolors --help
+dircolors -b
+nano .config/bash/bashrc 
+doas reboot
+dircolors --help
+dircolors
+firefox 
+printenv 
+xrdbload 
+flatpak run com.visualstudio.code 
+nano ~/.ssh/id_ed25519
+nano foo
+nano ~/.ssh/id_ed25519.pub
+mv .ssh/id_ed25519 .ssh/id_ed25519.pub 
+nano .ssh/id_ed25519
+nano ~/.config/bash/profile 
+nano ~/.config/bash/profile 
+ssh-agent -s
+nano ~/.config/bash/profile 
+nano .config/bash/aliases 
+nano .config/bash/bashrc 
+nano .config/bash/bashrc 
+nano ~/.config/bash/profile 
+nano .config/bash/bashrc 
+nano ~/.config/bash/profile 
+nano .config/bash/bashrc 
+nano ~/.local/share/icons/default/index.theme 
+sudo
+sudo cp -R .local/share/icons/ .
+lsal
+mv icons/ .icons/
+lsal .icons/
+rm -rf .icons/
+mv icons .icons
+sudo /usr/share/icons/default/
+sudo rm -rf /usr/share/icons/default/
+sudo cp -R .icons /usr/share/icons/
+lsal /usr/share/icons/.icons/
+lsal .icons/
+rm -rf .icons
+doas rm -rf .icons
+mkdir .icons
+cp -R .local/share/icons/default/ .icons/
+rm -rf .icons/
+nano .local/share/icons/default/index.theme 
+cp -R .local/share/icons/default/ /usr/share/icons/
+doas cp -R .local/share/icons/default/ /usr/share/icons/
+doas reboo
+sudo reboot
+lxappearance 
+ls
+lsal
+rm foo bar 
+rm .Xauthority 
+rm .bash_history 
+nano .xsession-errors
+lsa
+lsal
+lsal
+flatpak run io.gitlab.librewolf-community 
+doas reboot
+nano .config/bash/bashrc 
+nano .config/bash/profile 
+doas reboot
+flatpak run com.visualstudio.code 
+nano .config/bash/profile 
+nano .xsession-errors
+nano .xsession-errors
+doas apk add xss-lock
+nano .xsession-errors
+printenv 
+printenv | grep session
+printenv | grep SESS
+ls /etc/X11/Xsession
+ls /etc/X11/xinit/xinitrc
+sudo nano /etc/X11/xinit/xinitrc
+lsal
+nano .dmrc 
+sudo nano /etc/lightdm/lightdm.conf 
+sudo rc-service stop lightdm
+sudo rc-service lightdm stop
+echo $DISPLAY 
+ls -al
+lsal
+ls
+lsal
+nano .Xauthority 
+rm .Xauthority 
+nano .config/bash/profile 
+nano .config/bash/bashrc 
+lsal
+lsal .dbus/
+lsal .dbus/session-bus/
+rm -rf .dbus/
+pkill X
+doas reboot
+flatpak run com.visualstudio.code 
+nano .config/bash/bashrc 
+mousepad .xinitrc 
+xhost +
+doas apk add xhost
+xhost+
+xhost +
+pgrep -a Xorg
+nano .config/bash/bashrc 
+nano .config/bash/profile 
+nano .config/bash/profile 
+xauth list
+ls al
+lsal
+mv .Xauthority .config/X11/xauthority
+xauth list
+nano .config/bash/bashrc 
+lsal
+rm .bash_history 
+nano .config/bash/bashrc 
+nano .config/bash/profile 
+pkill X
+lsal
+xauth
+xauth list
+echo $DISPLAY 
+flatpak run com.visualstudio.code 
+lsal
+doas apk add i3blocks
+speaker-test -c2
+xbacklight
+doas apk add xbacklight
+notify-send
+notify-send 'brightness up'
+doas apk add scrot
+xkill
+doas apk add xkill
+xkill
+i3exi
+i3exit
+doas apk add i3exit
+shutdow
+doas apk add xautolock
+i3lock
+doas apk add i3lock
+doas apk add xss-lock
+ls .config/redshift/redshift.conf 
+nano .config/redshift/redshift.conf 
+nano .local/bin/nightmode
+doas apk add redshift
+doas apk add numlockx
+doas apk add picom
+i3lock
+setxkbmap
+doas apk add setxkbmap
+mousepad .xinitrc 
+pkill X
+pkill redshift
+redshift -l "42.6977:23.3218" -t "8000:${1:-5000}" -b "1:0.6"
+redshift -l "42.6977:23.3218" -t "8000:${1:-6000}" -b "1:0.6"
+pkill redshift
+redshift -l "42.6977:23.3218" -t "8000:5000" -b "1:0.7"
+redshift -l "42.6977:23.3218" -t "8000:7000" -b "1:0.7"
+ls
+lsal
+rm -rf .cache/xsel.log 
+picom --help
+pkill picom
+picom -i 1 -I 0.2 -O 0.2 -D 1 -f --blur-background
+picom -i 1 -I 0.2 -O 0.2 -D 1 -f --blur-background
+picom -i 1 -I 0.06 -O 0.06 -D 3 -f --blur-background
+picom -f
+picom -f -D 3
+picom -f -D 2
+picom -f -D 5
+picom -f -D 8
+picom -f -D 5
+pkill X
+mousepad .config/i3/config-2023 
+xprop
+doas apk add xprop
+doas apk add xprop
+setup-xorg
+xprop
+lsal .config/i3/
+cd .config/i3/
+ls
+lsal
+cat configs/constants.conf 
+cat configs/workspaces.conf 
+cat configs/settings.conf 
+mousepad .config/i3/config
+mousepad config-2023 
+nano config
+nano config-2023 
+rm config-2023 
+ls
+rm config-orig-alpine 
+cd .config/i3/
+ls
+nano config.bak 
+scrot --help
+nano config.bak 
+i3blocks
+exec pkill -SIGRTMIN+11 i3blocks
+mousepad config
+nano config
+ls
+lsal scripts/
+./scripts/dmenu_custom
+./scripts/dmenu_custom-new 
+./scripts/volume 
+doas apk add alsa-utils
+amixer 
+mousepad config
+feh
+doas apk add feh
+nano blurlock
+nano /usr/bin/blurlock
+nano .local/bin/i3exit
+nano .local/bin/i3exit
+import -window root
+convert
+i3lock
+i3lock --help
+doas apk add imagemagick
+nano .local/bin/blurlock
+nano .local/bin/i3exit
+nano .local/bin/blurlock
+nano .local/bin/blurlock
+chmod +x .local/bin/blurlock 
+chmod +x .local/bin/i3exit 
+playerctl
+exec reboot
+amixer -q set Master 5%+ unmute
+amixer 
+alsamixer 
+doas apk add alsa-lib alsa-plugins
+doas apk add alacritty
+doas apk add pcmanfm
+speaker-test -c2
+ls .local/bin/
+doas apk add inxi
+doas apk add udiskie
+mousepad .config/i3/config
+lsal
+mousepad .config/i3/config
+cd .config/i3/
+ls
+lsal
+rm -rf cfg/
+rm -rf configs/
+rm config-*
+rm config.bak 
+lsal
+mousepad blocks/config 
+mousepad scripts/keyindicator 
+./scripts/keyindicator 
+doas apk add xset
+./scripts/keyindicator 
+mousepad scripts/keyindicator 
+mousepad blocks/config 
+./scripts/kblayout
+xkblayout-state
+doas apk add libx11-dev
+cd ~/.local/bin/
+git clone https://github.com/nonpop/xkblayout-state
+cd xkblayout-state/
+ls
+make
+..
+rm -rf xkblayout-state/
+cd ~/.config/i3/
+ls
+lsal scripts/
+./scripts/volume 
+usermod -aG audio charlike
+doas usermod -aG audio charlike
+flatpak run com.visualstudio.code
+doas addgroup $USER audio
+addgroup root audio
+doas addgroup root audio
+alsamixer
+alsamixer
+doas rc-service alsa start
+doas rc-update add alsa
+doas reboot
+xprop
+alsamixer 
+doas apk add alsa-utils alsa-utils-doc alsa-lib alsaconf alsa-ucm-conf
+amixer sset Master unmute
+doas rc-update add dbus; doas rc-service dbus start
+doas echo snd-pcm-oss >> /etc/modules
+nano /etc/modules
+ls /dev/snd/
+doas nano /etc/modules
+doas modprobe snd-pcm-oss 
+doas apk_add aumix sox
+doas apk add aumix sox
+aumix
+aumix
+doas reboot
+lsmod | grep snd
+doas nano /etc/modules
+doas nano /etc/modules
+doas apk search snd
+doas apk add sndio-openrc sndio sndio-libs
+doas apk add gst-plugins-bad
+lsmod | grep snd
+doas nano /etc/modules
+doas apk add snd-hda-intel
+aplay -L
+pactl list sinks
+doas apk add alsa-hda
+doas apk add alsa-hda-conf
+doas apk search alsa
+doas apk search alsa
+doas apk add alsa-utils-openrc alsa-plugins-jack alsa-plugins alsa-plugins-pulse alsa-tools alsa-tools-dev alsa-ucm-conf
+alsamixer 
+doas reboot
+echo $RANDOM
+nano .local/bin/sysinxi-full
+chmod +x .local/bin/sysinxi-full 
+nano .ssh/config 
+nano .config/bash/profile 
+xinput --disable 151
+xinput list
+xinput --disable 12
+xinput list-props
+xinput list-props 12
+xinput --list | awk '/[Tt]ouch[Pp]ad.*pointer/ {print $7}'
+xinput --list
+xinput --list | sed 's/id=\(.*\)/\1/'
+xinput --list | sed 's/id=\(.*\)/\1/' | awk 
+xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $7}'
+xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}'
+xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}'
+xinput --disable $(xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}')
+xinput --enable $(xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}')
+xinput --disable $(xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}')
+cp .local/bin/i3exit .local/bin/i3-toggle-touchpad
+nano .local/bin/i3-toggle-touchpad 
+xinput list-props 12 | grep device
+xinput list-props 12 | grep Device
+xinput list-props 12 | grep Enabled
+xinput list-props 12 | grep "Device Enabled"
+xinput --enable $(xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}')
+xinput list-props 12 | grep "Device Enabled"
+xinput list-props 12 | grep "Device Enabled" | awk '/Enabled.*/ {print $1}'
+xinput list-props 12 | grep "Device Enabled" | awk '/Enabled.*/ {print $2}'
+xinput list-props 12 | grep "Device Enabled" | awk '/Enabled.*/ {print $3}'
+xinput list-props 12 | grep "Device Enabled" | awk '/Enabled.*/ {print $4}'
+xinput list-props 12 | grep "Device Enabled" | awk '/Enabled.*/ {print $4}' == 1
+nano .local/bin/i3-toggle-touchpad 
+touchpadId=$(xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}')
+nano .local/bin/i3-toggle-touchpad 
+isEnabled=xinput list-props "$touchpadId" | grep "Device Enabled" | awk '/Enabled.*/ {print $4}'
+isEnabled=$(xinput list-props "$touchpadId" | grep "Device Enabled" | awk '/Enabled.*/ {print $4}')
+echo $isEnabled 
+xinput --disable $(xinput --list | sed 's/id=\(.*\)/\1/' | awk '/[Tt]ouch[Pp]ad.*slave/ {print $6}')
+echo $isEnabled 
+isEnabled=$(xinput list-props "$touchpadId" | grep "Device Enabled" | awk '/Enabled.*/ {print $4}')
+echo $isEnabled 
+nano .local/bin/i3-toggle-touchpad 
+chmod +x .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+xinput --disable 12
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+./.local/bin/i3-toggle-touchpad 
+nano .local/bin/i3-toggle-touchpad 
+flatpak run com.visualstudio.code 
+flatpak run com.visualstudio.code 
+clear
+lsal
+ls
+git clone https://github.com/tunnckoCore/dotfiles
+lsal
+mkdir dotfiles/home
+cp -R .bashrc dotfiles/home/
+cp -R .Xauthority dotfiles/home/
+cp -R .profile dotfiles/home/
+cp -R .xinitrc dotfiles/home/
+cp -R .ssh/ dotfiles/home/
+lsal dotfiles/home/.ssh/
+rm dotfiles/home/.ssh/id_ed25519
+lsal
+cp -R .local dotfiles/home/
+rm -rf .local/share/containers/
+doas rm -rf .local/share/containers/
+rm -rf dotfiles/home/.local/share/containers/
+doas rm -rf dotfiles/home/.local/share/containers/
+doas rm -rf dotfiles/home/.local/share/flatpak/
+doas rm -rf dotfiles/home/.local/share/xorg/Xorg.*
+cp -R .local/ dotfiles/home
+cp -Rf .local/ dotfiles/home
+cp -Rf .local/bin/ dotfiles/home/.local/
+lsal
+cp -R .gnupg/ dotfiles/home/
+lsal .dotnet/
+rm -rf .dotnet/
+lsal .dbus/
+rm -rf .mozilla/
+lsal
+lsal var
+lsal .var
+lsal .config/
+rm -rf .config/Thunar/
+mkdir dotfiles/home/.config
+cp -R .config/X11/ dotfiles/home/.config/
+cp -R .config/gtk-* dotfiles/home/.config/
+cp -R .config/nano/ dotfiles/home/.config/
+cp -R .config/xfce4/ dotfiles/home/.config/

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+inxi --weather-source "$((1 + $RANDOM % 9))" -Fz -W "42.7, 23.32"

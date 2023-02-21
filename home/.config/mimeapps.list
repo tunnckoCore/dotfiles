@@ -1,0 +1,25 @@
+[Default Applications]
+x-scheme-handler/http=userapp-Firefox-K59J01.desktop
+x-scheme-handler/https=userapp-Firefox-K59J01.desktop
+x-scheme-handler/chrome=userapp-Firefox-K59J01.desktop
+text/html=userapp-Firefox-K59J01.desktop
+application/x-extension-htm=userapp-Firefox-K59J01.desktop
+application/x-extension-html=userapp-Firefox-K59J01.desktop
+application/x-extension-shtml=userapp-Firefox-K59J01.desktop
+application/xhtml+xml=userapp-Firefox-K59J01.desktop
+application/x-extension-xhtml=userapp-Firefox-K59J01.desktop
+application/x-extension-xht=userapp-Firefox-K59J01.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Firefox-K59J01.desktop;
+x-scheme-handler/https=userapp-Firefox-K59J01.desktop;
+x-scheme-handler/chrome=userapp-Firefox-K59J01.desktop;
+text/html=userapp-Firefox-K59J01.desktop;
+application/x-extension-htm=userapp-Firefox-K59J01.desktop;
+application/x-extension-html=userapp-Firefox-K59J01.desktop;
+application/x-extension-shtml=userapp-Firefox-K59J01.desktop;
+application/xhtml+xml=userapp-Firefox-K59J01.desktop;
+application/x-extension-xhtml=userapp-Firefox-K59J01.desktop;
+application/x-extension-xht=userapp-Firefox-K59J01.desktop;
+text/plain=org.xfce.mousepad.desktop;
+application/x-shellscript=org.xfce.mousepad.desktop;

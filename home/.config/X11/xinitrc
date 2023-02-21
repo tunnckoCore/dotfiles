@@ -2,8 +2,8 @@
 # February 21, 2023
 # $Xorg: xinitrc.cpp,v 1.3 2000/08/17 19:54:30 cpqbld Exp $
 
-userresources=$HOME/.config/xresources
-usermodmap=$HOME/.config/xmodmap
+userresources=$HOME/.config/X11/xresources
+usermodmap=$HOME/.config/X11/xmodmap
 xinitdir=/etc/X11
 sysresources=$xinitdir/Xresources
 sysmodmap=$xinitdir/Xmodmap

@@ -18,8 +18,9 @@ MiscHighlightUrls=TRUE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ScrollingLines=100000
 TitleMode=TERMINAL_TITLE_REPLACE
-BackgroundDarkness=0.750000
+BackgroundDarkness=0.550000
 TabActivityTimeout=5
+ScrollingOnOutput=FALSE
 MiscBellUrgent=FALSE
 MiscMouseWheelZoom=TRUE
 MiscMiddleClickOpensUri=FALSE
@@ -29,13 +30,12 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+
+; hyper-snazzy theme
 ColorBackground=#282a36
 ColorForeground=#ecf1f3
 ColorCursor=#ecf1f3
-ColorPalette=#2E3436;#ff5c57;#5af78e;#f3f99d;#57c7ff;#ff6ac1;#9aedfe;#f1f1f0;#686868;#ff5c57;#5af78e;#f3f99d;#57c7ff;#ff6ac1;#9aedfe;#f1f1f0
-MiscShowRelaunchDialog=TRUE
-MiscNewTabAdjacent=FALSE
-MiscSearchDialogOpacity=100
-MiscShowUnsafePasteDialog=TRUE
-MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 
+; if you are a bit fimilar with Xresources or Xdefaults
+; you get that order is from Color0 to Color15 (16 colors)
+ColorPalette=#2E3436;#ff5c57;#5af78e;#f3f99d;#57c7ff;#ff6ac1;#9aedfe;#f1f1f0;#686868;#ff5c57;#5af78e;#f3f99d;#57c7ff;#ff6ac1;#9aedfe;#f1f1f0

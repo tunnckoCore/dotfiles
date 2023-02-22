@@ -126,6 +126,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export LANG="en_US.UTF-8"
 export EDITOR="nano"
 export SPACESHIP_EXIT_CODE_SHOW=true
+export DENO_INSTALL="$XDG_DATA_HOME/deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 source "$XDG_CONFIG_HOME/bash/aliases"
 

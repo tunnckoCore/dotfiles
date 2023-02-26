@@ -1,16 +1,15 @@
 {
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.profiles.linux": {
-        "Flatpak Escape": {
-            "path": "flatpak-spawn",
-            "args": [
-                "--host",
-                "bash"
-            ]
-        }
-    },
-    "terminal.integrated.defaultProfile.linux": "Flatpak Escape",
-
+    // "terminal.integrated.profiles.linux": {
+    //     "Flatpak Escape": {
+    //         "path": "flatpak-spawn",
+    //         "args": [
+    //             "--host",
+    //             "bash"
+    //         ]
+    //     }
+    // },
+    // "terminal.integrated.defaultProfile.linux": "Flatpak Escape",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations": {
         // The background is optional
@@ -33,7 +32,6 @@
         "terminal.ansiBrightCyan": "#9aedfe",
         "terminal.ansiBrightWhite": "#eff0eb"
     },
-
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
@@ -76,7 +74,6 @@
     "window.zoomLevel": 0,
     "window.menuBarVisibility": "toggle",
     "update.mode": "none",
-    "workbench.iconTheme": "material-icon-theme",
     "workbench.statusBar.visible": true,
     "explorer.openEditors.visible": 0,
     "[markdown]": {
@@ -84,4 +81,6 @@
         "files.insertFinalNewline": false
     },
     "eslint.run": "onSave",
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.colorTheme": "Dracula",
 }

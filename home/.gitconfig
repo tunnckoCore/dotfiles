@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = master
+[user]
+	email = 5038030+tunnckoCore@users.noreply.github.com
+	name = tunnckoCore
+	signingkey = 83A79973F18425351FA6005D3D812AC9E5D87CE5
+[commit]
+	gpgsign = true

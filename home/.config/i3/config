@@ -99,14 +99,15 @@ new_window			none
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 
-for_window [urgent=latest] focus
+# switch immediately to the new opened thing (disabled now)
+#for_window [urgent=latest] focus
 
 
 # Default workspaces
 assign [class="(Navigator|firefox)"] $ws1
-assign [class="(Navigator|librewolf)"] $ws1
+assign [class="(Navigator|LibreWolf)"] $ws1
 assign [class="Xfce4-terminal" instance="xfce4-terminal" title="^Terminal 1"] $ws2
-assign [class="Code"] $ws3
+assign [class="(Code|code-oss)"] $ws3
 assign [class="Pcmanfm" title="charlike"] $ws6
 assign [class="Xfce4-terminal" title="htop"] $ws7
 
@@ -115,12 +116,12 @@ assign [class="Xfce4-terminal" title="htop"] $ws7
 for_window [class="^.*"] border pixel 1
 for_window [class="[.]*"] floating enable
 for_window [class="Xfce4-terminal" instance="xfce4-terminal" title="^Terminal 1"] floating disable
-for_window [class="URxvt"] floating disable
+for_window [class="(URxvt|code-oss|qutebrowser)"] floating disable
 for_window [title="alsamixer"] floating enable border pixel 1
 #for_window [class="calamares"] floating enable border normal
 for_window [class="(Navigator|firefox)"] floating disable
-for_window [class="(Navigator|librewolf)"] floating disable
-for_window [class="Firefox"] floating enable
+for_window [class="(Navigator|LibreWolf)"] floating disable
+#for_window [class="Firefox"] floating enable
 for_window [class="(Pcmanfm|pcmanfm)" title="charlike"] floating disable
 for_window [title="File Transfer*"] floating enable
 for_window [title="^sysinxi-*"] floating enable
@@ -140,16 +141,20 @@ for_window [window_type="menu"] floating enable
 
 
 # Flatpaks - LibreWolf & VSCode
-bindsym $super+w $exec flatpak run io.gitlab.librewolf-community
-bindsym $super+b $exec flatpak run io.gitlab.librewolf-community
+#bindsym $super+w $exec flatpak run io.gitlab.librewolf-community
+#bindsym $super+b $exec flatpak run io.gitlab.librewolf-community
+bindsym $super+w $exec librewolf
+bindsym $super+b $exec librewolf
 
 # for some frickin reason it doesn't launch, but thru terminal it does...
 #bindsym $super+r exec flatpak run com.visualstudio.code
 
 # Programs
 bindsym $super+h        exec pcmanfm $HOME
-#bindsym $super+d 	exec rofi -show run
-bindsym $super+d	exec dmenu_run -b -nb "#1f222d" -sb "#D5D5D5" -sf "#1f222d" -fn "Noto Sans-12" -h 30 -x 170 -y 1 -w 600
+bindsym $super+d 	exec rofi -show run
+
+# this `dmenu` shit constantly changes flags..
+#bindsym $super+d	exec dmenu_run -b -nb "#1f222d" -sb "#D5D5D5" -sf "#1f222d" -fn "Noto Sans-12" -h 30 -x 170 -y 1 -w 600
 #bindsym $super+f  	exec cd_with_fzf
 
 ######
@@ -186,7 +191,7 @@ bindsym $super+$shift+$enter 	exec i3-sensible-terminal
 bindsym $super+$shift+l		$exec $HOME/.local/bin/blurlock
 bindsym $super+$shift+s		$exec $HOME/.local/bin/i3exit suspend
 bindsym $super+$shift+h		$exec $HOME/.local/bin/i3exit hibernate
-bindsym $super+$shift+t		$exec $HOME/.local/bin/i3-toggle-touchpad
+#bindsym $super+$shift+t		$exec $HOME/.local/bin/i3-toggle-touchpad
 
 # Easy quitting/killing/logout
 bindsym $ctrl+$alt+$del		exit
@@ -264,7 +269,7 @@ bar {
 		active_workspace      	$base01 	$base02 	$base04
 		inactive_workspace    	$base01 	$base01		$base04
 		#urgent_workspace      	$base01		$base01		$base08
-		urgent_workspace 	#FF3D00 	#FF3D00 	$base01
+		urgent_workspace 	#FF3D00 	#FF3D00 	#ffffff
 	}
 }
 
@@ -282,9 +287,9 @@ client.urgent              $base02 	$base08 	$base00 	$base15
 ######
 
 # $exec xautolock -time 140 -locker i3lock
-exec_always xautolock -time 140 -locker blurlock --nofork
+exec_always xautolock -time 1 -locker $HOME/.local/bin/blurlock --nofork
 
-#$exec xss-lock --transfer-sleep-lock -- blurlock --nofork
+#$exec xss-lock --transfer-sleep-lock -- $HOME/.local/bin/blurlock --nofork
 exec_always picom -f -D 5
 
 # Night Mode (aur: redshift-minimal, optional config at ~/.config/redshift/redshift.conf)
@@ -305,8 +310,12 @@ exec_always --no-startup-id setxkbmap -layout "us,bg(phonetic)" -option "grp:alt
 # Remap Esc to CapsLock (esc key still works)
 exec_always --no-startup-id setxkbmap -layout "us,bg(phonetic)" -option caps:escape
 
+exec numlockx on
 $exec xfce4-terminal --title="Terminal 1"
-$exec flatpak run io.gitlab.librewolf-community
+#$exec flatpak run io.gitlab.librewolf-community
+$exec librewolf
+$exec $HOME/.local/bin/i3-toggle-touchpad
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/Downloads/dracula-base.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/i3/dracula-wallpaper-base.png
 exec_always --no-startup-id udiskie -a -2 -N -s
+exec_always iwctl adapter phy0 set-property Powered on && iwctl device wlan0 set-property Powered on && iwctl station wlan0 scan && iwctl station wlan0 connect ckwf

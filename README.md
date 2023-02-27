@@ -7,7 +7,7 @@ Mhmmm... This nightmare should stop by switching to NixOS..
 
 This trickery uses `gpg-agent` instead of `ssh-agent`. So you need to inform both sides for the other one.
 
-1. Add ENV vars, ssh & gpg-agent configs
+### 1. Add ENV vars, ssh & gpg-agent configs
 
 Add this to `.bashrc` or something similar
 
@@ -21,13 +21,13 @@ export GPG_TTY=$(tty)
 gpg-connect-agent UPDATESTARTUPTTY /bye >/dev/null
 ```
 
-the `~/.ssh/config`
+#### the `~/.ssh/config`
 
 ```
 Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"
 ```
 
-the `~/.gnupg/gpg-agent`
+#### the `~/.gnupg/gpg-agent`
 
 ```
 #pinentry-program /usr/bin/pinentry-curses
@@ -39,7 +39,7 @@ default-cache-ttl 60480000
 ttyname $GPG_TTY
 ```
 
-1. Add your `KEYGRIP`s of the **AUTH** and **SIGN** keys to `~/.gnupg/sshcontrol`
+### 2. Add your `KEYGRIP`s of the **AUTH** and **SIGN** keys to `~/.gnupg/sshcontrol`
 
 ```bash
 gpg -K --with-fingerprint --with-subkey-fingerprints --with-keygrip --keyid-format long
@@ -59,7 +59,7 @@ echo 78C59F72A0B57569585BBF8D1EBEA82A6190B6FA >> ~/.gnupg/sshcontrol
 echo E3F1B15CEB129B91D46B3BF6587155063B6101FB >> ~/.gnupg/sshcontrol
 ```
 
-1. Add env vars of the fingerprints for SIGN and AUTH keys
+### 3. Add env vars of the fingerprints for SIGN and AUTH keys
 
 _strip the spaces from the fingerprint that is shown_
 
@@ -70,7 +70,7 @@ export GPG_SIGN_KEY_FINGERPRINT="83A79973F18425351FA6005D3D812AC9E5D87CE5"
 export GPG_AUTH_KEY_FINGERPRINT="FDB5C44765C53929B2D74612B39C923AA8114FC6"
 ```
 
-1. Add your Signing Key fingerprint to `git`, or pass `-S` flag to your `git commit` commands.
+### 4. Add your Signing Key fingerprint to `git`, or pass `-S` flag to your `git commit` commands.
 
 I also use `Signed-off-by`, so I have `commit.gpgsign` set to `true`
 
@@ -81,7 +81,7 @@ git config --global user.signingkey 83A79973F18425351FA6005D3D812AC9E5D87CE5
 git config --global commit.gpgsign true
 ```
 
-1. Add your public key `sign` (`[S]`) gpg key to Github - GPG Keys
+### 5. Add your public key `sign` (`[S]`) gpg key to Github - GPG Keys
 
 https://github.com/settings/gpg/new
 
@@ -90,7 +90,7 @@ https://github.com/settings/gpg/new
 gpg --armor --export $GPG_SIGN_KEY_FINGERPRINT
 ```
 
-2. Add your public key `sign` gpg key to Github - SSH Keys, select `Signing Key` in the dropdown.
+### 6. Add your public key `sign` gpg key to Github - SSH Keys, select `Signing Key` in the dropdown.
 
 https://github.com/settings/ssh/new
 
@@ -99,7 +99,7 @@ https://github.com/settings/ssh/new
 gpg --export-ssh-key $GPG_SIGN_KEY_FINGERPRINT
 ```
 
-3. Add your public `auth` gpg key to Github - SSH Keys, select `Authentication Key`.
+### 7. Add your public `auth` gpg key to Github - SSH Keys, select `Authentication Key`.
 
 https://github.com/settings/ssh/new
 
@@ -107,7 +107,7 @@ https://github.com/settings/ssh/new
 gpg --export-ssh-key $GPG_AUTH_KEY_FINGERPRINT
 ```
 
-4. Login to Github
+### 8. Login to Github
 
 This is the same for every user.
 
@@ -118,7 +118,7 @@ ssh -T git@github.com
 If something fails, try adding `-v` flag. `ssh -Tvv git@github.com`.
 
 
-5. Now you hopefully can
+### 9. Now you hopefully can
 
 ```bash
 git add -A

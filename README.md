@@ -122,5 +122,8 @@ If something fails, try adding `-v` flag. `ssh -Tvv git@github.com`.
 
 ```bash
 git add -A
-git commit --gpgsign
+git commit -s -S -m 'chore: my signed-off and gpg signed msg'
 ```
+
+- the uppercase `-S` is shorthand flag for `--gpg-sign` - GPG signing of commits & tags/releases
+- the lowercase `-s` is for `--signoff` -  adding `Signed-off-by` trailer (adds your `user.email` from git config)

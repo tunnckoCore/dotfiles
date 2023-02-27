@@ -21,6 +21,26 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent UPDATESTARTUPTTY /bye >/dev/null
 
+alias gpg_list="gpg -K --with-fingerprint --with-subkey-fingerprints --with-keygrip --keyid-format long"
+
+gpg_backup() {
+  mkdir -p ~/.gpg-backups
+
+  echo "Exporting GPG keys to ~/.gpg-backups"
+
+  gpg --export-ownertrust > ~/.gpg-backups/sigma-trust.gpg
+  gpg --export --export-options backup --output ~/.gpg-backups/sigma-public-keys.gpg
+  gpg --export-secret-keys --export-options backup --output ~/.gpg-backups/sigma-private-keys.gpg
+}
+
+gpg_restore() {
+  echo "Importing GPG keys from ~/.gpg-backups"
+
+  gpg --import-ownertrust ~/.gpg-backups/sigma-trust.gpg
+  gpg --import ~/.gpg-backups/sigma-public-keys.gpg
+  gpg --import ~/.gpg-backups/sigma-private-keys.gpg
+}
+
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 #gpg-connect-agent UPDATESTARTUPTTY /bye
 #gpgconf --launch gpg-agent

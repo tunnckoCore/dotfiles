@@ -1,0 +1,78 @@
+alias ls="ls --color --group-directories-first -F"
+alias ll="ls -1a"
+alias lsal="ls -al"
+
+alias mkdir="mkdir -pv"
+alias cl="clear"
+
+alias gcm="git commit -s -S -m "$1""
+alias gall="git add --all"
+alias gp="git push"
+
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
+
+alias grep="grep --color=tty -d skip"
+alias opn="xdg-open"
+alias sk="screenkey"
+
+alias ..="cd .."
+
+alias zshc="nano ~/.zshrc"
+alias ali="nano ~/.aliases"
+alias sli="source ~/.aliases"
+
+# alias gpull="git pull origin $(git_current_branch)"
+# alias gpush="git push origin $(git_current_branch)"
+
+# confirmation #
+alias mv="mv -i"
+alias cp="cp -i"
+alias ln="ln -i"
+
+alias free='free -m' # show sizes in MB
+alias more=less
+
+# Parenting changing perms on / #
+alias chown="chown --preserve-root"
+alias chmod="chmod --preserve-root"
+alias chgrp="chgrp --preserve-root"
+
+gadd() {
+  git add -A
+  git commit -s -S -m "$1"
+  git push
+}
+
+gfix () {
+  git commit -s -S -m "fix: $1"
+}
+
+gfeat () {
+  git commit -s -S -m "feat: $1"
+}
+
+alias gpg_list="gpg -K --with-fingerprint --with-subkey-fingerprints --with-keygrip --keyid-format long"
+
+gpg_backup() {
+  mkdir -p ~/.gpg-backups
+
+  echo "Exporting GPG keys to ~/.gpg-backups"
+
+  gpg --export-ownertrust > ~/.gpg-backups/sigma-trust.gpg
+  gpg --export --export-options backup --output ~/.gpg-backups/sigma-public-keys.gpg
+  gpg --export-secret-keys --export-options backup --output ~/.gpg-backups/sigma-private-keys.gpg
+}
+
+gpg_restore() {
+  echo "Importing GPG keys from ~/.gpg-backups"
+
+  gpg --import-ownertrust ~/.gpg-backups/sigma-trust.gpg
+  gpg --import ~/.gpg-backups/sigma-public-keys.gpg
+  gpg --import ~/.gpg-backups/sigma-private-keys.gpg
+}
+
+gpg_zip() {
+  echo "Compressing ~/.gpg-backups with encrypted zip, choose a password!"
+  zip -e -r gpg-backups.zip .gpg-backups
+}

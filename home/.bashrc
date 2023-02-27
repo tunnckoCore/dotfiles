@@ -41,6 +41,7 @@ gpg_restore() {
   gpg --import ~/.gpg-backups/sigma-private-keys.gpg
 }
 
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#gpg-connect-agent UPDATESTARTUPTTY /bye
-#gpgconf --launch gpg-agent
+gpg_zip() {
+  echo "Compressing ~/.gpg-backups with encrypted zip, choose a password!"
+  zip -e -r gpg-backups.zip .gpg-backups
+}

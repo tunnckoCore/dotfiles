@@ -76,7 +76,7 @@ I also use `Signed-off-by`, so I have `commit.gpgsign` set to `true`
 
 ```bash
 git config --global user.email "your_github_noreplay_email similar to 5038030+tunnckoCore@users.noreply.github.com"
-git config --global user.name "your_username
+git config --global user.name "your_username"
 git config --global user.signingkey 83A79973F18425351FA6005D3D812AC9E5D87CE5
 git config --global commit.gpgsign true
 ```

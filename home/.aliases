@@ -52,6 +52,13 @@ gfeat () {
   git commit -s -S -m "feat: $1"
 }
 
+reload_wpa () {
+  sudo killall wpa_supplicant
+  sudo iwctl adapter phy0 set-property Powered on
+  sudo iwctl device wlan0 set-property Powered on
+  sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+}
+
 alias gpg_list="gpg -K --with-fingerprint --with-subkey-fingerprints --with-keygrip --keyid-format long"
 
 gpg_backup() {

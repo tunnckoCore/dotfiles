@@ -18,10 +18,17 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
-export $(dbus-launch)
+#export $(dbus-launch)
 
 export GPG_TTY=$(tty)
 gpg-connect-agent UPDATESTARTUPTTY /bye >/dev/null
 
 source ~/.gpgpass
 source ~/.aliases
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:./node_modules/.bin:$HOME/.local/bin:$PATH"
